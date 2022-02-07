@@ -20,4 +20,14 @@ public class AppConfigTest {
 		User user = ac.getBean(User.class);
 		System.out.println(user);
 	}
+	
+	// Java Config2
+	// 자바 설정클래스가 모여있는 베이스 패키지를 전달 
+	// 설정 클래스에 @Configuration이 반드시 필요하다.
+	public static void testAppConfig02() {
+		ApplicationContext ac =  new AnnotationConfigApplicationContext("com.poscoict.container.config.user");
+		
+		User user = ac.getBean(User.class);
+		System.out.println(user);
+	}
 }
