@@ -2,7 +2,6 @@ package com.poscoict.container.soundsystem;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -12,9 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.poscoict.container.config.soundsystem.CDPlayerConfig;
+
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:com/poscoict/container/config/soundsystem/CDPlayerConfig.xml"})
-public class CDPlayerXmlConfigTest {
+@ContextConfiguration(classes = {CDPlayerConfig.class})
+public class CDPlayerJavaConfigTest {
 	
 	@Rule
 	public final SystemOutRule systemOutRule= new SystemOutRule().enableLog();
@@ -23,12 +24,7 @@ public class CDPlayerXmlConfigTest {
 	private CDPlayer cdPlayer;
 	
 	@Test
-	public void testCDPlayerNotNull() {
-//		ApplicationContext ac = new ClassPathXmlApplicationContext(
-//				"com/poscoict/container/config/soundsystem/CDPlayer.xml");
-		
-//		CDPlayer cdPlayer = ac.getBean(CDPlayer.class);
-	
+	public void testCDPlayerNot() {
 		assertNotNull(cdPlayer);
 	}
 	
@@ -39,6 +35,4 @@ public class CDPlayerXmlConfigTest {
 		assertEquals("Playing 붕붕 by 김하온", systemOutRule.getLog().replace("\r\n", "").replace("\n",""));
 		//assertEquals(s, "Playing 붕붕 by 김하온");
 	}
-	
-	
 }
