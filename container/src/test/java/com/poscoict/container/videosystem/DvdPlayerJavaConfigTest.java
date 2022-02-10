@@ -14,6 +14,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.poscoict.container.config.videosystem.DvdPlayerConfig;
 
+//import com.poscoict.container.config.videosystem.DvdConfig;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {DvdPlayerConfig.class})
 public class DvdPlayerJavaConfigTest {
